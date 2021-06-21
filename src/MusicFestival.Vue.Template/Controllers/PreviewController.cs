@@ -1,12 +1,12 @@
 ﻿using System.Web.Mvc;
-using MusicFestival.Template.Models.Preview;
+using EPiServer;
 using EPiServer.Core;
 using EPiServer.Framework.DataAnnotations;
 using EPiServer.Framework.Web;
 using EPiServer.Framework.Web.Mvc;
 using EPiServer.Web;
 using EPiServer.Web.Mvc;
-using EPiServer;
+using MusicFestival.Template.Models.Preview;
 
 namespace MusicFestival.Template.Controllers
 {

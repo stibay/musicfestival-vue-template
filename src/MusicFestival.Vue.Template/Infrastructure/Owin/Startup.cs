@@ -1,13 +1,13 @@
 ﻿using System;
+using EPiServer.Cms.UI.AspNetIdentity;
+using EPiServer.ContentApi.Core;
+using EPiServer.Core;
+using EPiServer.Web.Routing;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
-using EPiServer.Cms.UI.AspNetIdentity;
-using Microsoft.AspNet.Identity.Owin;
-using EPiServer.Web.Routing;
-using EPiServer.Core;
-using Microsoft.AspNet.Identity;
-using EPiServer.ContentApi.Core;
 
 [assembly: OwinStartup(typeof(MusicFestival.Template.Infrastructure.Owin.Startup))]
 namespace MusicFestival.Template.Infrastructure.Owin
@@ -54,15 +54,17 @@ namespace MusicFestival.Template.Infrastructure.Owin
         private bool IsContentApiRequest(Uri requestUri)
         {
             if (requestUri == null)
+            {
                 return false;
+            }
 
             if (requestUri.IsAbsoluteUri)
             {
-                return requestUri.PathAndQuery.StartsWith("/" + RouteConstants.BaseContentApiRoute);
+                return requestUri.PathAndQuery.StartsWith("/" + RouteConstants.VersionTwoApiRoute);
             }
             else
             {
-                return requestUri.ToString().StartsWith("/" + RouteConstants.BaseContentApiRoute);
+                return requestUri.ToString().StartsWith("/" + RouteConstants.VersionTwoApiRoute);
             }
         }
     }

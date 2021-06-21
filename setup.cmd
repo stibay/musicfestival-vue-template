@@ -1,14 +1,6 @@
 @ECHO OFF
 SETLOCAL
 
-REM Clear node modules before installing
-CALL npm ci
-IF %errorlevel% NEQ 0 EXIT /B %errorlevel%
-
-REM Restore nuget packages
-CALL .\.nuget\nuget.exe restore MusicFestival.Vue.Template.sln
-IF %errorlevel% NEQ 0 EXIT /B %errorlevel%
-
 REM Set up database
 SET MusicFestival=src\MusicFestival.Vue.Template
 IF EXIST %MusicFestival%\App_Data (

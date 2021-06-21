@@ -1,1 +1,0 @@
-call "C:\Program Files\IIS Express\iisexpress.exe" /path:%~dp0src\MusicFestival.Vue.Template\

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
-using MusicFestival.Template.Models.Pages;
 using EPiServer.Web.Mvc;
+using MusicFestival.Template.Models.Pages;
 
 namespace MusicFestival.Template.Controllers
 {
